@@ -58,6 +58,7 @@ app.get('/users/:username', (req, res) => {
 app.delete('/users/:username', (req, res) => {
     const username = req.params.username;
     const user = users.find((obj) => (obj.username === username));
+    // username = username.filter((username) -> username.id!==id);
     if (user === undefined) {
         res.status(404).json({ message: "user not found" });
     } else {
